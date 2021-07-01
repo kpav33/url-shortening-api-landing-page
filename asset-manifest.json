@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/url-shortening-api-landing-page/static/css/main.8c8b27cf.chunk.css",
+    "main.js": "/url-shortening-api-landing-page/static/js/main.84c62682.chunk.js",
+    "main.js.map": "/url-shortening-api-landing-page/static/js/main.84c62682.chunk.js.map",
+    "runtime-main.js": "/url-shortening-api-landing-page/static/js/runtime-main.f1c15cb2.js",
+    "runtime-main.js.map": "/url-shortening-api-landing-page/static/js/runtime-main.f1c15cb2.js.map",
+    "static/js/2.7ede62cd.chunk.js": "/url-shortening-api-landing-page/static/js/2.7ede62cd.chunk.js",
+    "static/js/2.7ede62cd.chunk.js.map": "/url-shortening-api-landing-page/static/js/2.7ede62cd.chunk.js.map",
+    "static/js/3.06405bfa.chunk.js": "/url-shortening-api-landing-page/static/js/3.06405bfa.chunk.js",
+    "static/js/3.06405bfa.chunk.js.map": "/url-shortening-api-landing-page/static/js/3.06405bfa.chunk.js.map",
+    "index.html": "/url-shortening-api-landing-page/index.html",
+    "static/css/main.8c8b27cf.chunk.css.map": "/url-shortening-api-landing-page/static/css/main.8c8b27cf.chunk.css.map",
+    "static/js/2.7ede62cd.chunk.js.LICENSE.txt": "/url-shortening-api-landing-page/static/js/2.7ede62cd.chunk.js.LICENSE.txt",
+    "static/media/logo.6ce24c58.svg": "/url-shortening-api-landing-page/static/media/logo.6ce24c58.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.f1c15cb2.js",
+    "static/js/2.7ede62cd.chunk.js",
+    "static/css/main.8c8b27cf.chunk.css",
+    "static/js/main.84c62682.chunk.js"
+  ]
+}
