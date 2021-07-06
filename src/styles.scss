@@ -1,0 +1,110 @@
+// || GENERAL
+:root {
+    --button: hsl(180, 66%, 49%);
+    --background-section: hsl(257, 27%, 26%);
+    --border-active: hsl(0, 87%, 67%);
+    --grey-light: hsl(0, 0%, 75%);
+    --grey-dark: hsl(257, 7%, 63%);
+    --dark-violet: hsl(255, 11%, 22%);
+    --black: hsl(260, 8%, 14%);
+}
+  
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+  
+html,
+body {
+    margin: 0;
+    padding: 0;
+    font-size: 18px;
+    color: var(--grey-dark);
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+}
+
+// Font awesome for icons
+
+.app {
+    text-align: center;
+
+    @media only screen and (min-width: 768px) {
+        text-align: center;
+    }
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 1rem;
+}
+
+.banner {
+    margin: 1rem;
+    img {
+        width: 450px;
+        margin-left: 20px; 
+    }
+    h1 {
+        color: var(--black);
+        font-weight: 700;
+        font-size: 2rem;
+    }
+    p {
+        color: var(--grey-dark);
+    }
+    button {
+        color: white;;
+        background: var(--button);
+        border: none;
+        padding: 12px 32px;
+        border-radius: 9999px;
+        cursor: pointer;
+        font-size: 0.9rem;
+        font-weight: bold;
+    }
+}
+
+.shortener {
+    margin: 1.5rem;
+    padding: 1rem;
+    border-radius: 15px;
+    background: var(--dark-violet);
+    background-repeat: no-repeat;
+    background-position: right top;
+
+    input {
+        padding: 0.5rem;
+        color: var(--grey-dark);
+        width: 100%;
+        font-size: 0.9rem;
+    }
+    button {
+        color: white;;
+        background: var(--button);
+        border: none;
+        padding: 12px 32px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 0.9rem;
+        font-weight: bold;
+        margin-top: 1rem;
+        width: 100%;
+    }
+}
+
+.about {
+    background: var(--grey-light);
+    padding: 1rem;
+
+    h2 {
+        color: var(--dark-violet);
+    }
+
+    p {
+        color: var(--grey-dark);
+    }
+}
