@@ -4,6 +4,8 @@ import Header from "./components/Header";
 import Banner from "./components/Banner";
 import Shortener from "./components/Shortener";
 import About from "./components/About";
+import CallToAction from "./components/CallToAction";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -12,6 +14,8 @@ function App() {
       <Banner />
       <Shortener />
       <About />
+      <CallToAction />
+      <Footer />
     </div>
   );
 }

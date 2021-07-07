@@ -97,8 +97,11 @@ header {
 }
 
 .about {
-    background: var(--grey-light);
+    background: #f0f1f6;
     padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 64px;
 
     h2 {
         color: var(--dark-violet);
@@ -106,5 +109,91 @@ header {
 
     p {
         color: var(--grey-dark);
+        margin-bottom: 4rem;
+    }
+
+    .panel {
+        background: white;
+        padding: 1rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 0 0.5rem;
+        border-radius: 5px;
+
+        // https://www.sitepoint.com/community/t/need-help-using-border-radius-on-an-svg-icon/355051/5
+        .imageBackground {
+            background: var(--dark-violet);
+            width: 75px;
+            height: 75px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: -55px;
+        }
+
+        h3 {
+            color: var(--dark-violet);
+        }
+
+        p {
+            font-size: 0.8rem;
+            margin-bottom: 0rem;
+        }
+
+    }
+}
+
+.callToAction {
+    color: white;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: var(--dark-violet);
+
+    button {
+        color: white;;
+        background: var(--button);
+        border: none;
+        padding: 15px 32px;
+        border-radius: 9999px;
+        cursor: pointer;
+        font-size: 0.9rem;
+        font-weight: bold;
+    }
+}
+
+footer {
+    background: var(--dark-violet);
+    color: var(--grey-light);
+    padding: 2rem 4rem;
+
+    h3 {
+        color: white;
+    }
+
+    .footerLinks {
+
+        ul {
+            list-style-type: none;
+            text-align: center;
+            font-size: 0.9rem;
+            line-height: 1.3rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding-left: 0;
+        }
+    }
+
+    .socialMedia {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
     }
 }
