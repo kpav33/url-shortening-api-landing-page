@@ -1,14 +1,10 @@
 import React from "react";
 
-function FooterLinks() {
+function FooterLinks({ title, children }) {
   return (
     <div className="footerLinks">
-      <h3>Features</h3>
-      <ul>
-        <li>Link Shortening</li>
-        <li>Branded Links</li>
-        <li>Analytics</li>
-      </ul>
+      <h3>{title}</h3>
+      <ul>{children}</ul>
     </div>
   );
 }

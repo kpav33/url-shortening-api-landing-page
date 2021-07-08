@@ -23,6 +23,7 @@ body {
     color: var(--grey-dark);
     font-family: 'Poppins', sans-serif;
     font-weight: 500;
+    overflow-x: hidden;
 }
 
 // Font awesome for icons
@@ -40,18 +41,125 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 1.5rem 1rem;
+
+    .desktopMenu {
+        display: none;
+
+        @media only screen and (min-width: 768px) {
+            display: flex;
+        }
+    }
+
+    #hamburger {
+        display: block;
+
+        @media only screen and (min-width: 768px) {
+            display: none;
+        }
+    }
+}
+
+.desktopMenu {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0rem 3rem;
+}
+
+.navMenu ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 350px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+    a {
+        color: var(--grey-dark);
+        text-decoration: none;
+        font-weight: bold;
+    }
+}
+
+.users {
+    width: 250px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+    .login {
+        border: none;
+        background: none;
+        color: var(--grey-dark);
+        font-size: 0.9rem;
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+    .signUp {
+        color: white;;
+        background: var(--button);
+        border: none;
+        padding: 11px 25px;
+        border-radius: 9999px;
+        cursor: pointer;
+        font-size: 0.9rem;
+        font-weight: bold;
+    }
 }
 
 .banner {
     margin: 1rem;
+
+    @media only screen and (min-width: 768px) {
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+
+    .bannerText {
+        @media only screen and (min-width: 768px) {
+            text-align: left;
+            width: 500px;
+        }
+
+        h1 {
+            font-size: 2rem;
+            line-height: 2.2rem;
+            margin-bottom: 0.5rem;
+
+            @media only screen and (min-width: 768px) {
+                font-size: 3rem;
+                line-height: 3.3rem;
+                margin-bottom: 0.5rem;
+            }
+        }
+
+        p {
+            margin-top: 0.5rem;
+            margin-bottom: 2rem;
+        }
+    }
+
     img {
-        width: 450px;
-        margin-left: 20px; 
+        // Set width is causing an issue in app width on mobile
+        // Used overflow-x hidden on body to fix the issue
+        height: auto;
+        width: 150%;
+
+        @media only screen and (min-width: 768px) {
+            width: 50%;
+        }
     }
     h1 {
-        color: var(--black);
+        color: var(--dark-violet);
         font-weight: 700;
-        font-size: 2rem;
+        font-size: 2.3rem;
+        line-height: 2rem;
     }
     p {
         color: var(--grey-dark);
@@ -60,7 +168,7 @@ header {
         color: white;;
         background: var(--button);
         border: none;
-        padding: 12px 32px;
+        padding: 16px 32px;
         border-radius: 9999px;
         cursor: pointer;
         font-size: 0.9rem;
@@ -69,18 +177,45 @@ header {
 }
 
 .shortener {
-    margin: 1.5rem;
+    position: relative;
+    z-index: 9;
+    margin: 4rem 1.5rem -4rem 1.5rem;
     padding: 1rem;
     border-radius: 15px;
     background: var(--dark-violet);
+    background-image: url(./images/bg-shorten-mobile.svg);
     background-repeat: no-repeat;
     background-position: right top;
 
+    @media only screen and (min-width: 768px) {
+        width: 80%;
+        margin: 4rem auto -4rem auto;
+        padding: 2.5rem;
+        background-image: url(./images/bg-shorten-desktop.svg);
+        object-fit: fill;
+        background-position: right top;
+    }
+
+    form {
+        @media only screen and (min-width: 768px) {
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+    }
+
     input {
-        padding: 0.5rem;
+        padding: 0.7rem;
         color: var(--grey-dark);
         width: 100%;
         font-size: 0.9rem;
+
+        @media only screen and (min-width: 768px) {
+            width: 80%;
+            font-weight: bold;
+            border-radius: 5px;
+        }
+
     }
     button {
         color: white;;
@@ -93,6 +228,13 @@ header {
         font-weight: bold;
         margin-top: 1rem;
         width: 100%;
+
+        @media only screen and (min-width: 768px) {
+            margin-top: 0;
+            padding: 0;
+            width: 150px;
+            padding: 12px 25px;
+        }
     }
 }
 
@@ -105,10 +247,12 @@ header {
 
     h2 {
         color: var(--dark-violet);
+        margin-top: 6rem;
     }
 
     p {
         color: var(--grey-dark);
+        margin-top: 0;
         margin-bottom: 4rem;
     }
 
@@ -124,7 +268,7 @@ header {
 
         // https://www.sitepoint.com/community/t/need-help-using-border-radius-on-an-svg-icon/355051/5
         .imageBackground {
-            background: var(--dark-violet);
+            background: var(--background-section);
             width: 75px;
             height: 75px;
             border-radius: 50%;
@@ -154,6 +298,12 @@ header {
     justify-content: center;
     align-items: center;
     background: var(--dark-violet);
+    background-image: url(./images/bg-boost-mobile.svg);
+
+    @media only screen and (min-width: 768px) {
+        background-image: url(./images/bg-boost-desktop.svg);
+        height: 250px;
+    }
 
     button {
         color: white;;
@@ -182,7 +332,7 @@ footer {
             list-style-type: none;
             text-align: center;
             font-size: 0.9rem;
-            line-height: 1.3rem;
+            line-height: 1.8rem;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -195,5 +345,6 @@ footer {
         display: flex;
         justify-content: space-evenly;
         align-items: center;
+        margin: 2rem 0rem 1rem 0rem;
     }
 }

@@ -5,10 +5,7 @@ import background from "../images/bg-boost-mobile.svg";
 
 function CallToAction() {
   return (
-    <section
-      className="callToAction"
-      style={{ backgroundImage: `url(${background})` }}
-    >
+    <section className="callToAction">
       <h2>Boost your links today</h2>
       <button>Get Started</button>
     </section>

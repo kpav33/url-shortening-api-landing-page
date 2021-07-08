@@ -1,6 +1,9 @@
 import React from "react";
 
 import AboutPanel from "./AboutPanel";
+import imageRecognition from "../images/icon-brand-recognition.svg";
+import imageRecords from "../images/icon-detailed-records.svg";
+import imageCustomizable from "../images/icon-fully-customizable.svg";
 
 function About() {
   return (
@@ -11,7 +14,12 @@ function About() {
         statistics dashbboard
       </p>
       <div className="panels">
-        <AboutPanel />
+        <AboutPanel
+          img={imageRecognition}
+          title="Brand Recognition"
+          text="Boost your brand recognition with each click. Generic links don't mean a
+        thing. Branded links help instil confidence in your content."
+        />
         <svg
           width="80"
           height="
@@ -26,7 +34,11 @@ function About() {
             strokeWidth="6px"
           />
         </svg>
-        <AboutPanel />
+        <AboutPanel
+          img={imageRecords}
+          title="Detailed Records"
+          text="Gain insights into who is clicking your links. Knowing when and where people engage with your content helps inform better decisions."
+        />
         <svg
           width="80"
           height="
@@ -41,7 +53,11 @@ function About() {
             strokeWidth="6px"
           />
         </svg>
-        <AboutPanel />
+        <AboutPanel
+          img={imageCustomizable}
+          title="Fully Customizable"
+          text="Improve brand awareness and content discoverability through customizable links, supercharging audience engagement."
+        />
       </div>
     </section>
   );
