@@ -42,6 +42,10 @@ header {
     align-items: center;
     padding: 1.5rem 1rem;
 
+    @media only screen and (min-width: 768px) {
+        padding: 1.5rem 6rem;
+    }
+
     .desktopMenu {
         display: none;
 
@@ -81,6 +85,10 @@ header {
         color: var(--grey-dark);
         text-decoration: none;
         font-weight: bold;
+
+        &:hover {
+            color: var(--black);
+        } 
     }
 }
 
@@ -97,6 +105,10 @@ header {
         font-size: 0.9rem;
         font-weight: bold;
         cursor: pointer;
+
+        &:hover {
+            color: var(--black)
+        }
     }
 
     .signUp {
@@ -108,6 +120,10 @@ header {
         cursor: pointer;
         font-size: 0.9rem;
         font-weight: bold;
+
+        &:hover {
+            background: hsl(180, 66%, 70%);
+        }
     }
 }
 
@@ -124,7 +140,7 @@ header {
     .bannerText {
         @media only screen and (min-width: 768px) {
             text-align: left;
-            width: 500px;
+            width: 550px;
         }
 
         h1 {
@@ -133,8 +149,8 @@ header {
             margin-bottom: 0.5rem;
 
             @media only screen and (min-width: 768px) {
-                font-size: 3rem;
-                line-height: 3.3rem;
+                font-size: 4.1rem;
+                line-height: 4.5rem;
                 margin-bottom: 0.5rem;
             }
         }
@@ -153,6 +169,8 @@ header {
 
         @media only screen and (min-width: 768px) {
             width: 50%;
+            position: relative;
+            left: 200px;
         }
     }
     h1 {
@@ -173,6 +191,10 @@ header {
         cursor: pointer;
         font-size: 0.9rem;
         font-weight: bold;
+
+        &:hover {
+            background: hsl(180, 66%, 70%);
+        }
     }
 }
 
@@ -192,8 +214,7 @@ header {
         margin: 4rem auto -4rem auto;
         padding: 2.5rem;
         background-image: url(./images/bg-shorten-desktop.svg);
-        object-fit: fill;
-        background-position: right top;
+        background-size: cover;
     }
 
     form {
@@ -229,6 +250,10 @@ header {
         margin-top: 1rem;
         width: 100%;
 
+        &:hover {
+            background: hsl(180, 66%, 70%);
+        }
+
         @media only screen and (min-width: 768px) {
             margin-top: 0;
             padding: 0;
@@ -245,15 +270,83 @@ header {
     flex-direction: column;
     padding-bottom: 64px;
 
+    @media only screen and (min-width: 768px) {
+        padding-bottom: 0px;
+    }
+
     h2 {
         color: var(--dark-violet);
         margin-top: 6rem;
+
+        @media only screen and (min-width: 768px) {
+            margin-top: 9rem;
+            margin-bottom: 1rem;
+            font-size: 2rem;
+        }
     }
 
-    p {
+    .aboutPara {
         color: var(--grey-dark);
         margin-top: 0;
         margin-bottom: 4rem;
+
+        @media only screen and (min-width: 768px) {
+            width: 40%;
+            margin: 0 auto 4rem auto;
+        }
+    }
+
+    .panels {
+        display: block;
+
+        @media only screen and (min-width: 768px) {
+            margin: 0 6rem;
+            display: grid;
+            grid-template: repeat(10, 30px) / 1fr 1fr 1fr;
+            grid-gap: 16px
+        }
+
+        #brand {
+            @media only screen and (min-width: 768px) {
+                //test
+                grid-column: 1;
+                grid-row: 1 / 8;
+            }
+        }
+
+        #records {
+            @media only screen and (min-width: 768px) {
+                //test
+                grid-column: 2;
+                grid-row: 2 / 9;
+            }
+        }
+
+        #customize {
+            @media only screen and (min-width: 768px) {
+                //test
+                grid-column: 3;
+                grid-row: 3 / 10;
+            }
+        }
+
+        .desktopLine {
+            display: none;
+            @media only screen and (min-width: 768px) {
+                //test
+                position: relative;
+                display: grid;
+                right: 40px;
+                top: 180px;
+            }
+        }
+    }
+
+    .mobileLine {
+
+        @media only screen and (min-width: 768px) {
+            display: none;
+        }
     }
 
     .panel {
@@ -266,6 +359,13 @@ header {
         margin: 0 0.5rem;
         border-radius: 5px;
 
+        @media only screen and (min-width: 768px) {
+            justify-content: center;
+            align-items: flex-start;
+            text-align: left;
+            height: 250px;
+        }
+
         // https://www.sitepoint.com/community/t/need-help-using-border-radius-on-an-svg-icon/355051/5
         .imageBackground {
             background: var(--background-section);
@@ -276,6 +376,11 @@ header {
             justify-content: center;
             align-items: center;
             margin-top: -55px;
+
+            @media only screen and (min-width: 768px) {
+                margin-top: -100px;
+                margin-left: 1rem;
+            }
         }
 
         h3 {
@@ -283,8 +388,15 @@ header {
         }
 
         p {
+            color: var(--grey-dark);
+            margin-top: 0;
+            margin-bottom: 4rem;
             font-size: 0.8rem;
             margin-bottom: 0rem;
+            
+            @media only screen and (min-width: 768px) {
+                line-height: 1.5rem;
+            }
         }
 
     }
@@ -303,6 +415,14 @@ header {
     @media only screen and (min-width: 768px) {
         background-image: url(./images/bg-boost-desktop.svg);
         height: 250px;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    h2 {
+        @media only screen and (min-width: 768px) {
+            font-size: 2rem;
+        }
     }
 
     button {
@@ -314,23 +434,49 @@ header {
         cursor: pointer;
         font-size: 0.9rem;
         font-weight: bold;
+
+        &:hover {
+            background: hsl(180, 66%, 70%);
+        }
     }
 }
 
 footer {
-    background: var(--dark-violet);
+    background: var(--black);
     color: var(--grey-light);
     padding: 2rem 4rem;
 
+    @media only screen and (min-width: 768px) {
+        display: flex;
+        justify-content: space-around;
+        align-items: flex-start;
+        padding: 4rem 0rem;
+    }
+
     h3 {
         color: white;
+
+        @media only screen and (min-width: 768px) {
+            margin-top: 0;
+            text-align: left;
+
+        }
+    }
+
+    .footerRight {
+
+        @media only screen and (min-width: 768px) {
+            display: flex;
+            justify-content: space-evenly;
+            align-items: flex-start;
+            width: 900px;
+        }
     }
 
     .footerLinks {
 
         ul {
             list-style-type: none;
-            text-align: center;
             font-size: 0.9rem;
             line-height: 1.8rem;
             display: flex;
@@ -338,6 +484,17 @@ footer {
             justify-content: center;
             align-items: center;
             padding-left: 0;
+
+            li {
+                &:hover {
+                    color: var(--button);
+                }
+            }
+
+            @media only screen and (min-width: 768px) {
+                align-items: flex-start;
+            }
+
         }
     }
 
@@ -346,5 +503,20 @@ footer {
         justify-content: space-evenly;
         align-items: center;
         margin: 2rem 0rem 1rem 0rem;
+
+        @media only screen and (min-width: 768px) {
+            justify-content: space-around;
+            align-items: center;
+            width: 180px;
+            margin: 0.3rem 0rem 1rem 0rem;
+        }
+
+
+        // Replace the icons with the ones from the React icons to make changing the color on hover easier and general manipulation with the icons
+        img {
+            &:hover {
+                color: hsl(180, 66%, 70%);
+            }
+        }
     }
 }

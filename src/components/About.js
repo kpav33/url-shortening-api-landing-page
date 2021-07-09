@@ -9,18 +9,20 @@ function About() {
   return (
     <section className="about">
       <h2>Advanced Statistics</h2>
-      <p>
+      <p className="aboutPara">
         Track how your links are performing across the web with our advanced
         statistics dashbboard
       </p>
       <div className="panels">
         <AboutPanel
+          id="brand"
           img={imageRecognition}
           title="Brand Recognition"
           text="Boost your brand recognition with each click. Generic links don't mean a
         thing. Branded links help instil confidence in your content."
         />
         <svg
+          className="mobileLine"
           width="80"
           height="
         80"
@@ -34,12 +36,29 @@ function About() {
             strokeWidth="6px"
           />
         </svg>
+        <svg
+          className="desktopLine"
+          width="80"
+          height="
+        80"
+        >
+          <line
+            x1="15"
+            y1="0"
+            x2="48"
+            y2="0"
+            stroke="hsl(180, 66%, 49%)"
+            strokeWidth="15px"
+          />
+        </svg>
         <AboutPanel
+          id="records"
           img={imageRecords}
           title="Detailed Records"
           text="Gain insights into who is clicking your links. Knowing when and where people engage with your content helps inform better decisions."
         />
         <svg
+          className="mobileLine"
           width="80"
           height="
         80"
@@ -53,7 +72,23 @@ function About() {
             strokeWidth="6px"
           />
         </svg>
+        <svg
+          className="desktopLine"
+          width="80"
+          height="
+        80"
+        >
+          <line
+            x1="15"
+            y1="0"
+            x2="48"
+            y2="0"
+            stroke="hsl(180, 66%, 49%)"
+            strokeWidth="15px"
+          />
+        </svg>
         <AboutPanel
+          id="customize"
           img={imageCustomizable}
           title="Fully Customizable"
           text="Improve brand awareness and content discoverability through customizable links, supercharging audience engagement."

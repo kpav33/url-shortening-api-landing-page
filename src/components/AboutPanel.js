@@ -1,8 +1,8 @@
 import React from "react";
 
-function AboutPanel({ img, title, text }) {
+function AboutPanel({ id, img, title, text }) {
   return (
-    <div className="panel">
+    <div className="panel" id={id}>
       <div className="imageBackground">
         <img src={img} alt="icon" />
       </div>
