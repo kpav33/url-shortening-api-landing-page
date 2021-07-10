@@ -1,17 +1,17 @@
 import React from "react";
 
-import iconFb from "../images/icon-facebook.svg";
-import iconTw from "../images/icon-twitter.svg";
-import iconPi from "../images/icon-pinterest.svg";
-import iconIn from "../images/icon-instagram.svg";
+import { AiFillFacebook } from "react-icons/ai";
+import { AiOutlineTwitter } from "react-icons/ai";
+import { FaPinterest } from "react-icons/fa";
+import { AiOutlineInstagram } from "react-icons/ai";
 
 function SocialMediaIcons() {
   return (
     <div className="socialMedia">
-      <img src={iconFb} alt="Facebook icon" />
-      <img src={iconTw} alt="Twitter icon" />
-      <img src={iconPi} alt="Pinterest icon" />
-      <img src={iconIn} alt="Instagram icon" />
+      <AiFillFacebook size="32px" className="fb-svg" />
+      <AiOutlineTwitter size="32px" className="tw-svg" />
+      <FaPinterest size="28px" className="pi-svg" />
+      <AiOutlineInstagram size="32px" className="in-svg" />
     </div>
   );
 }

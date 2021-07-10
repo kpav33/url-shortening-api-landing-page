@@ -1,8 +1,5 @@
 import React from "react";
 
-// bg-boost-mobile
-import background from "../images/bg-boost-mobile.svg";
-
 function CallToAction() {
   return (
     <section className="callToAction">
