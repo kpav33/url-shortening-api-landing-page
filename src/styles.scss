@@ -334,6 +334,27 @@ header {
         margin-top: 1rem;
         width: 100%;
 
+        //box-shadow: 0 0 0 0 rgba(0, 0, 0, 1);
+	    //transform: scale(1);
+	    //animation: pulse 2s infinite;
+
+        @keyframes pulse {
+            0% {
+                transform: scale(0.95);
+                //box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.7);
+            }
+        
+            70% {
+                transform: scale(1);
+                //box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
+            }
+        
+            100% {
+                transform: scale(0.95);
+                //box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+            }
+        }
+
         &:hover {
             background: hsl(180, 66%, 70%);
         }
@@ -358,6 +379,62 @@ header {
     @media only screen and (min-width: 768px) {
         padding-bottom: 0px;
     }
+    // WORK ON MEDIA QUERIES
+    .links {
+        margin-top: 4rem;
+        width: 88%;
+        margin: 4rem auto 0rem auto;
+        padding: 0.5rem;
+        display: grid;
+        grid-gap: 16px;
+
+    }
+
+    .shortenedLink {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: white;
+        padding: 5px 15px;
+        border-radius: 5px;
+        color: var(--black);
+
+        .shortened {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            a {
+                text-decoration: none;
+                color: var(--button);
+            }
+
+             button {
+                 margin-left: 1rem;
+                 color: white;;
+                 background: var(--button);
+                 border: none;
+                 margin: 5px 0px 5px 16px;
+                 padding: 10px 24px;
+                 border-radius: 5px;
+                 cursor: pointer;
+                 font-size: 0.9rem;
+                 font-weight: bold;
+
+                 &:hover {
+                    background: hsl(180, 66%, 70%);
+                 }
+             }
+        }
+    }
+
+    .badLink {
+        background: tomato;
+        padding: 5px 15px;
+        border-radius: 5px;
+        color: white;
+    }
+    // DOWN TO HERE NEED TO WORK ON MEDIA QUERIES
 
     h2 {
         color: var(--dark-violet);
