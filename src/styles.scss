@@ -309,6 +309,21 @@ header {
         }
     }
 
+    .label {
+        color: #cb6775;
+        font-size: 12px;
+        font-style: italic;
+        position: absolute;
+        left: 20px;
+        top: 66px;
+        margin: 5px 0px;
+
+        @media only screen and (min-width: 768px) {
+            left: 75px;
+            top: 100px;
+        }
+    }
+
     input {
         padding: 0.7rem;
         color: var(--grey-dark);

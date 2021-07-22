@@ -17,12 +17,31 @@ function ContextProvider({ children }) {
   console.log(value);
 
   function onChange(event) {
+    console.log(event.target.value);
+    if (event.target.value === "") {
+      console.log("EMPTY STRING");
+    }
     setValue(event.target.value);
   }
 
   //let longUrl = "https://api.shrtco.de/v2/shorten?url=https://www.rtvslo.si/;";
   let longUrl = `https://api.shrtco.de/v2/shorten?url=${value}`;
 
+  const [formError, setFormError] = useState(false);
+  console.log("FORM ERROR " + formError);
+
+  function onSubmitClick() {
+    //console.log("VALUE " + value);
+    if (value === "") {
+      console.log("EMPTY STRING VALUE");
+      setFormError(true);
+    } else {
+      setFormError(false);
+      setShorten(true);
+    }
+  }
+
+  // Add try/catch block
   useEffect(() => {
     if (shorten) {
       fetch(longUrl)
@@ -122,6 +141,8 @@ function ContextProvider({ children }) {
         handleClick,
         linkRef,
         id,
+        onSubmitClick,
+        formError,
       }}
     >
       {children}
