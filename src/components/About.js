@@ -25,7 +25,9 @@ function About() {
         key={link.result.code}
         id={link.result.code}
       >
-        <p>{link.result.original_link.slice(0, -1)}</p>
+        <div className="originalLink">
+          {link.result.original_link.slice(0, -1)}
+        </div>
         <div className="shortened">
           <a href={link.result.full_short_link} ref={linkRef}>
             {link.result.full_short_link}

@@ -21,7 +21,7 @@ function ContextProvider({ children }) {
   }
 
   //let longUrl = "https://api.shrtco.de/v2/shorten?url=https://www.rtvslo.si/;";
-  let longUrl = `https://api.shrtco.de/v2/shorten?url=${value};`;
+  let longUrl = `https://api.shrtco.de/v2/shorten?url=${value}`;
 
   useEffect(() => {
     if (shorten) {
