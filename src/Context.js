@@ -1,39 +1,46 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 
+// Create Context
 const Context = React.createContext();
 
 function ContextProvider({ children }) {
+  // Show or hide mobile menu state
   const [showMenu, setShowMenu] = useState(false);
 
+  // Hide mobile menu if window size is resized
   useEffect(() => {
     window.addEventListener("resize", () => setShowMenu(false));
     return () => window.removeEventListener("resize", () => setShowMenu(false));
   }, []);
 
+  // Allow fetch call to the API to execute
   const [shorten, setShorten] = useState(false);
-  const [linkShorten, setlinkShorten] = useState([]);
+
+  // Store all shortened link objects into an array
+  // Set as value empty array or call the value from local storage if it exists
+  const [linkShorten, setlinkShorten] = useState(
+    JSON.parse(localStorage.getItem("shortenedLinks")) || []
+  );
+
+  // Store form input field value
   const [value, setValue] = useState("");
+  // Check if input field is empty
+  const [formError, setFormError] = useState(false);
 
-  console.log(value);
-
+  // Turn form input into a controlled component
   function onChange(event) {
-    console.log(event.target.value);
     if (event.target.value === "") {
       console.log("EMPTY STRING");
     }
     setValue(event.target.value);
   }
 
-  //let longUrl = "https://api.shrtco.de/v2/shorten?url=https://www.rtvslo.si/;";
+  // Create API call URL
   let longUrl = `https://api.shrtco.de/v2/shorten?url=${value}`;
 
-  const [formError, setFormError] = useState(false);
-  console.log("FORM ERROR " + formError);
-
+  // Execute when users clicks the submit button and allow fetch to start
   function onSubmitClick() {
-    //console.log("VALUE " + value);
     if (value === "") {
-      console.log("EMPTY STRING VALUE");
       setFormError(true);
     } else {
       setFormError(false);
@@ -41,84 +48,41 @@ function ContextProvider({ children }) {
     }
   }
 
-  // Add try/catch block
+  // Catch errors add
+  // Call to API
   useEffect(() => {
     if (shorten) {
       fetch(longUrl)
         .then((response) => response.json())
         .then((data) => {
-          //console.log(data);
           setlinkShorten((prevArray) => [...prevArray, data]);
           setShorten(false);
+        })
+        .catch((error) => {
+          alert(
+            `There was an error when trying to call to the API. Please try to shorten your URL again, after the page reloads.
+${error}`
+          );
+          setShorten(false);
+          window.location.reload();
         });
     }
-  }, [shorten]);
+  }, [shorten, longUrl]);
 
-  const [copyClick, setCopyClick] = useState(false);
+  // Store shortened URLs in local storage so they persist through user's sessions
+  useEffect(() => {
+    localStorage.setItem("shortenedLinks", JSON.stringify(linkShorten));
+  }, [linkShorten]);
 
-  function handleChange(event) {
-    console.log(linkShorten);
-    /*let updatedLinks = linkShorten.map((link) => {
-      console.log("OK");
-      console.log(link.result.code, event.target.id);
-      if (link.result.code === event.target.id) {
-        <div
-          className="shortenedLink"
-          key={link.result.code}
-          id={link.result.code}
-        >
-          <p>{link.result.original_link.slice(0, -1)}</p>
-          <div className="shortened">
-            <a href={link.result.full_short_link}>
-              {link.result.full_short_link}
-            </a>
-            <button
-              onClick={setCopyClick(true)}
-              style={{ background: "var(--dark-violet)" }}
-            >
-              Copied!
-            </button>
-          </div>
-        </div>;
-      } else {
-        return link;
-      }
-    });*/
-    let updatedLinks = linkShorten.map((link) =>
-      link.result.code === event.target.id ? (
-        <div
-          className="shortenedLink"
-          key={link.result.code}
-          id={link.result.code}
-        >
-          <p>{link.result.original_link.slice(0, -1)}</p>
-          <div className="shortened">
-            <a href={link.result.full_short_link}>
-              {link.result.full_short_link}
-            </a>
-            <button style={{ background: "var(--dark-violet)" }}>
-              Copied!
-            </button>
-          </div>
-        </div>
-      ) : (
-        link
-      )
-    );
-    setlinkShorten(updatedLinks);
-    console.log(updatedLinks);
+  // Clear all saved links from local storage
+  function clearLocalStorage() {
+    localStorage.clear();
+    window.location.reload();
   }
-  const linkRef = useRef(null);
 
-  const [id, setId] = useState("");
-
+  // On Copy button click store shortened link to clipboard and change button style
   function handleClick(event) {
-    //linkRef.current.textContent;
-    //document.execCommand("copy");
-    //setId(event.target.id);
-    console.log(event.target.parentNode.firstChild.innerText);
     navigator.clipboard.writeText(event.target.parentNode.firstChild.innerText);
-    console.log(event);
     document.getElementById(event.target.id).textContent = "Copied!";
     document.getElementById(event.target.id).style.backgroundColor =
       "hsl(255, 11%, 22%)";
@@ -135,14 +99,10 @@ function ContextProvider({ children }) {
         setlinkShorten,
         value,
         onChange,
-        copyClick,
-        setCopyClick,
-        handleChange,
         handleClick,
-        linkRef,
-        id,
         onSubmitClick,
         formError,
+        clearLocalStorage,
       }}
     >
       {children}

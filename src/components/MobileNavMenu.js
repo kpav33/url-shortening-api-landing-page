@@ -2,19 +2,16 @@ import React from "react";
 
 function MobileNavMenu({ showMenu }) {
   return (
-    <nav
-      className="mobileMenu"
-      style={{ display: showMenu ? "block" : "none" }}
-    >
+    <nav className="mobileMenu" style={{ opacity: showMenu ? "1" : "0" }}>
       <ul>
         <li>
-          <a href="#">Features</a>
+          <a href="/">Features</a>
         </li>
         <li>
-          <a href="#">Pricing</a>
+          <a href="/">Pricing</a>
         </li>
         <li>
-          <a href="#">Resources</a>
+          <a href="/">Resources</a>
         </li>
       </ul>
       <hr />

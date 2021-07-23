@@ -1,21 +1,12 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useContext } from "react";
 import { Context } from "../Context";
 
 import MobileNavMenu from "./MobileNavMenu";
 import logo from "../images/logo.svg";
 import { GiHamburgerMenu } from "react-icons/gi";
 
-// Use semantic <nav> element!
-
 function Header() {
   const { showMenu, setShowMenu } = useContext(Context);
-  /*
-  const [showMenu, setShowMenu] = useState(false);
-
-  useEffect(() => {
-    window.addEventListener("resize", () => setShowMenu(false));
-    return () => window.removeEventListener("resize", () => setShowMenu(false));
-  }, []);*/
 
   return (
     <>
@@ -25,13 +16,13 @@ function Header() {
           <nav className="navMenu">
             <ul>
               <li>
-                <a href="#">Features</a>
+                <a href="/">Features</a>
               </li>
               <li>
-                <a href="#">Pricing</a>
+                <a href="/">Pricing</a>
               </li>
               <li>
-                <a href="#">Resources</a>
+                <a href="/">Resources</a>
               </li>
             </ul>
           </nav>

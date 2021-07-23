@@ -1,22 +1,12 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useContext } from "react";
 
 import { Context } from "../Context";
 
 function Shortener() {
-  const {
-    shorten,
-    setShorten,
-    linkShorten,
-    setlinkShorten,
-    value,
-    onChange,
-    onSubmitClick,
-    formError,
-  } = useContext(Context);
+  const { shorten, value, onChange, onSubmitClick, formError } =
+    useContext(Context);
 
-  console.log(linkShorten);
-  console.log(value);
-
+  // Define inline styles
   let inlineButtonStyle = {
     boxShadow: "0 0 0 0 rgba(0, 0, 0, 1)",
     transform: "scale(1)",

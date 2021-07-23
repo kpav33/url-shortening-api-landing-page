@@ -8,6 +8,15 @@
     --dark-violet: hsl(255, 11%, 22%);
     --black: hsl(260, 8%, 14%);
 }
+
+@mixin button($background: var(--button), $color: white) {
+    color: $color;
+    font-size: 0.9rem;
+    font-weight: bold;
+    cursor: pointer;
+    background: $background;
+    border: none;
+}
   
 *,
 *:before,
@@ -26,14 +35,8 @@ body {
     overflow-x: hidden;
 }
 
-// Font awesome for icons
-
 .app {
     text-align: center;
-
-    @media only screen and (min-width: 768px) {
-        text-align: center;
-    }
 }
 
 /* || HEADER */
@@ -64,19 +67,19 @@ header {
             display: none;
         }
     }
-
 }
 
 .mobileMenu {
-
     background: var(--background-section);
     margin: 0px 16px;
     border-radius: 6px;
     position: absolute;
     width: 90%;
+    opacity: 1;
+    transition: opacity 1s ease-out;
 
     @media only screen and (min-width: 768px) {
-        display: none;
+        opacity: 0;
     }
     
     ul {
@@ -102,8 +105,6 @@ header {
     }
 
     .usersMobile {
-        //margin-top: 1.5rem;
-        //padding-bottom: 1.5rem;
         height: 130px;
         display: flex;
         flex-direction: column;
@@ -125,7 +126,7 @@ header {
         }
 
         .signUpMobile {
-            color: white;;
+            color: white;
             background: var(--button);
             border: none;
             padding: 11px 25px;
@@ -178,12 +179,7 @@ header {
     align-items: center;
 
     .login {
-        border: none;
-        background: none;
-        color: var(--grey-dark);
-        font-size: 0.9rem;
-        font-weight: bold;
-        cursor: pointer;
+        @include button($background: none, $color: var(--grey-dark));
 
         &:hover {
             color: var(--black)
@@ -191,14 +187,9 @@ header {
     }
 
     .signUp {
-        color: white;;
-        background: var(--button);
-        border: none;
+        @include button;
         padding: 11px 25px;
         border-radius: 9999px;
-        cursor: pointer;
-        font-size: 0.9rem;
-        font-weight: bold;
 
         &:hover {
             background: hsl(180, 66%, 70%);
@@ -256,24 +247,22 @@ header {
             left: 150px;
         }
     }
+
     h1 {
         color: var(--dark-violet);
         font-weight: 700;
         font-size: 2.3rem;
         line-height: 2rem;
     }
+
     p {
         color: var(--grey-dark);
     }
+
     button {
-        color: white;;
-        background: var(--button);
-        border: none;
+        @include button;
         padding: 16px 32px;
         border-radius: 9999px;
-        cursor: pointer;
-        font-size: 0.9rem;
-        font-weight: bold;
 
         &:hover {
             background: hsl(180, 66%, 70%);
@@ -335,38 +324,26 @@ header {
             font-weight: bold;
             border-radius: 5px;
         }
-
     }
+
     button {
-        color: white;;
-        background: var(--button);
-        border: none;
+        @include button;
         padding: 12px 32px;
         border-radius: 5px;
-        cursor: pointer;
-        font-size: 0.9rem;
-        font-weight: bold;
         margin-top: 1rem;
         width: 100%;
-
-        //box-shadow: 0 0 0 0 rgba(0, 0, 0, 1);
-	    //transform: scale(1);
-	    //animation: pulse 2s infinite;
 
         @keyframes pulse {
             0% {
                 transform: scale(0.95);
-                //box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.7);
             }
         
             70% {
                 transform: scale(1);
-                //box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
             }
         
             100% {
                 transform: scale(0.95);
-                //box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
             }
         }
 
@@ -394,26 +371,19 @@ header {
     @media only screen and (min-width: 768px) {
         padding-bottom: 0px;
     }
-    // WORK ON MEDIA QUERIES
+
     .links {
         margin-top: 4rem;
         width: 93%;
         margin: 3rem auto 0rem auto;
-        //padding: 0.5rem;
-        //display: grid;
-        //grid-gap: 16px;
         display: flex;
         flex-direction: column;
+        padding-bottom: 0.5rem;
 
         @media only screen and (min-width: 768px) {
-            //margin-top: 4rem;
             width: 88%;
-            //margin: 4rem auto 0rem auto;
             padding: 0.5rem;
-            //display: grid;
-            //grid-gap: 16px;
         }
-
     }
 
     .shortenedLink {
@@ -483,16 +453,12 @@ header {
             }
 
              button {
+                @include button;
                  margin-left: 1rem;
-                 color: white;;
-                 background: var(--button);
-                 border: none;
                  margin: 5px;
                  padding: 10px 24px;
                  border-radius: 5px;
-                 cursor: pointer;
                  font-size: 14px;
-                 font-weight: bold;
 
                  @media only screen and (min-width: 768px) {
                     margin: 5px 0px 5px 16px;
@@ -513,7 +479,22 @@ header {
         color: white;
         margin-top: 1rem;
     }
-    // DOWN TO HERE NEED TO WORK ON MEDIA QUERIES
+
+    .clearStorage {
+        color: white;
+        background: var(--button);
+        border: none;
+        margin: 0 auto;
+        padding: 10px 24px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 14px;
+        font-weight: bold;
+
+        &:hover {
+            background: hsl(180, 66%, 70%);
+         }
+    }
 
     h2 {
         color: var(--dark-violet);
@@ -549,7 +530,6 @@ header {
 
         #brand {
             @media only screen and (min-width: 768px) {
-                //test
                 grid-column: 1;
                 grid-row: 1 / 8;
             }
@@ -557,7 +537,6 @@ header {
 
         #records {
             @media only screen and (min-width: 768px) {
-                //test
                 grid-column: 2;
                 grid-row: 2 / 9;
             }
@@ -565,7 +544,6 @@ header {
 
         #customize {
             @media only screen and (min-width: 768px) {
-                //test
                 grid-column: 3;
                 grid-row: 3 / 10;
             }
@@ -574,7 +552,6 @@ header {
         .desktopLine {
             display: none;
             @media only screen and (min-width: 768px) {
-                //test
                 position: relative;
                 display: grid;
                 right: 40px;
@@ -639,7 +616,6 @@ header {
                 line-height: 1.5rem;
             }
         }
-
     }
 }
 
@@ -668,14 +644,9 @@ header {
     }
 
     button {
-        color: white;;
-        background: var(--button);
-        border: none;
+        @include button;
         padding: 15px 32px;
         border-radius: 9999px;
-        cursor: pointer;
-        font-size: 0.9rem;
-        font-weight: bold;
 
         &:hover {
             background: hsl(180, 66%, 70%);
@@ -739,7 +710,6 @@ footer {
             @media only screen and (min-width: 768px) {
                 align-items: flex-start;
             }
-
         }
     }
 
@@ -760,9 +730,13 @@ footer {
 
         .fb-svg, .tw-svg, .pi-svg, .in-svg {
             color: white;
+            position: relative;
+            top: 0;
+            transition: top ease 0.5s;
 
             &:hover {
                 color: hsl(180, 66%, 70%);
+                top: -5px;
             }
         }
     }

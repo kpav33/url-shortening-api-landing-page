@@ -8,16 +8,10 @@ import imageRecords from "../images/icon-detailed-records.svg";
 import imageCustomizable from "../images/icon-fully-customizable.svg";
 
 function About() {
-  const {
-    linkShorten,
-    copyClick,
-    setCopyClick,
-    handleClick,
-    handleChange,
-    linkRef,
-    id,
-  } = useContext(Context);
-  console.log(linkRef);
+  const { linkShorten, handleClick, linkRef, clearLocalStorage } =
+    useContext(Context);
+
+  // Map over the array of shortened URL objects and check their validity
   const shortenedLinks = linkShorten.map((link, index) =>
     link.ok ? (
       <div
@@ -25,19 +19,13 @@ function About() {
         key={link.result.code}
         id={link.result.code}
       >
-        <div className="originalLink">
-          {link.result.original_link.slice(0, -1)}
-        </div>
+        <div className="originalLink">{link.result.original_link}</div>
         <div className="shortened">
           <a href={link.result.full_short_link} ref={linkRef}>
             {link.result.full_short_link}
           </a>
-          <button
-            id={index}
-            onClick={(e) => handleClick(e)}
-            style={{ background: copyClick && "var(--dark-violet)" }}
-          >
-            {copyClick ? "Copied!" : "Copy"}
+          <button id={index} onClick={(e) => handleClick(e)}>
+            Copy
           </button>
         </div>
       </div>
@@ -50,6 +38,12 @@ function About() {
   return (
     <section className="about">
       <div className="links">{shortenedLinks}</div>
+      {/* Show button to clear local storage if there is any data saved in local storage */}
+      {linkShorten.length > 0 ? (
+        <button className="clearStorage" onClick={clearLocalStorage}>
+          Clear saved URLs
+        </button>
+      ) : null}
       <h2>Advanced Statistics</h2>
       <p className="aboutPara">
         Track how your links are performing across the web with our advanced
