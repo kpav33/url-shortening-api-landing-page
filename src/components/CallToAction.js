@@ -5,7 +5,7 @@ function CallToAction() {
   return (
     <section className="callToAction">
       <h2>Boost your links today</h2>
-      <Link to="/pricing">
+      <Link to="/url-shortening-api-landing-page/pricing">
         <button>Get Started</button>
       </Link>
     </section>

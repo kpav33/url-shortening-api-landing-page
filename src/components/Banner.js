@@ -13,7 +13,7 @@ function Banner() {
           Build your brand's recognition and get detailed insights on how your
           links are performing.
         </p>
-        <Link to="/pricing">
+        <Link to="/url-shortening-api-landing-page/pricing">
           <button>Get Started</button>
         </Link>
       </div>

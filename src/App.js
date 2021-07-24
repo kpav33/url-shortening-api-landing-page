@@ -23,13 +23,22 @@ function App() {
           <About />
           <CallToAction />
         </Route>
-        <Route exact path="/features">
+        <Route
+          exact
+          path={["/features", "/url-shortening-api-landing-page/features"]}
+        >
           <Features />
         </Route>
-        <Route exact path="/pricing">
+        <Route
+          exact
+          path={["/pricing", "/url-shortening-api-landing-page/pricing"]}
+        >
           <Pricing />
         </Route>
-        <Route exact path="/resources">
+        <Route
+          exact
+          path={["/resources", "/url-shortening-api-landing-page/resources"]}
+        >
           <Resources />
         </Route>
       </Switch>

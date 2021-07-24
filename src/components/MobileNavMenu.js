@@ -7,15 +7,15 @@ function MobileNavMenu({ showMenu }) {
       <ul>
         <li>
           {/*<a href="/">Features</a>*/}
-          <Link to="/features">Features</Link>
+          <Link to="/url-shortening-api-landing-page/features">Features</Link>
         </li>
         <li>
           {/*<a href="/">Pricing</a>*/}
-          <Link to="/pricing">Pricing</Link>
+          <Link to="/url-shortening-api-landing-page/pricing">Pricing</Link>
         </li>
         <li>
           {/*<a href="/">Resources</a>*/}
-          <Link to="/resources">Resources</Link>
+          <Link to="/url-shortening-api-landing-page/resources">Resources</Link>
         </li>
       </ul>
       <hr />
