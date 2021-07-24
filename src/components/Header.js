@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import { Context } from "../Context";
+import { Link } from "react-router-dom";
 
 import MobileNavMenu from "./MobileNavMenu";
 import logo from "../images/logo.svg";
@@ -11,18 +12,23 @@ function Header() {
   return (
     <>
       <header>
-        <img src={logo} alt="logo" />
+        <Link to="/">
+          <img src={logo} alt="logo" />
+        </Link>
         <div className="desktopMenu">
           <nav className="navMenu">
             <ul>
               <li>
-                <a href="/">Features</a>
+                {/*<a href="/">Features</a>*/}
+                <Link to="/features">Features</Link>
               </li>
               <li>
-                <a href="/">Pricing</a>
+                {/*<a href="/">Pricing</a>*/}
+                <Link to="/pricing">Pricing</Link>
               </li>
               <li>
-                <a href="/">Resources</a>
+                {/*<a href="/">Resources</a>*/}
+                <Link to="/resources">Resources</Link>
               </li>
             </ul>
           </nav>

@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 import hero from "../images/illustration-working.svg";
 
@@ -12,7 +13,9 @@ function Banner() {
           Build your brand's recognition and get detailed insights on how your
           links are performing.
         </p>
-        <button>Get Started</button>
+        <Link to="/pricing">
+          <button>Get Started</button>
+        </Link>
       </div>
     </section>
   );
