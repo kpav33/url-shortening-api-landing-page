@@ -17,7 +17,7 @@ function App() {
     <div className="app">
       <Header />
       <Switch>
-        <Route exact path="/">
+        <Route exact path={["/", "/url-shortening-api-landing-page"]}>
           <Banner />
           <Shortener />
           <About />
