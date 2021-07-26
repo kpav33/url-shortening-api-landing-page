@@ -27,7 +27,7 @@ Users should be able to:
 
 ### Screenshot
 
-![solution screenshot](./images/page-screenshot.png)
+![solution screenshot](./src/images/page-screenshot.png)
 
 ### Links
 
