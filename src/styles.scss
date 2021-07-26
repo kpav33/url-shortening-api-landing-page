@@ -288,6 +288,7 @@ header {
         padding: 2.5rem;
         background-image: url(./images/bg-shorten-desktop.svg);
         background-size: cover;
+        max-width: 1920px;
     }
 
     form {
@@ -383,6 +384,7 @@ header {
         @media only screen and (min-width: 768px) {
             width: 88%;
             padding: 0.5rem;
+            max-width: 1920px;
         }
     }
 
@@ -522,7 +524,9 @@ header {
         display: block;
 
         @media only screen and (min-width: 768px) {
-            margin: 0 6rem;
+            max-width: 1920px;
+            margin: 0 auto;
+            padding: 0 6rem;
             display: grid;
             grid-template: repeat(10, 30px) / 1fr 1fr 1fr;
             grid-gap: 16px
